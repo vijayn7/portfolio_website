@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './Navbar';
