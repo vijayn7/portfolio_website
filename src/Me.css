@@ -1,7 +1,7 @@
 @import './colors.css';
 
 .me-section {
-  padding: 3rem 0;
+  padding: 3rem 1rem;
   margin-bottom: 5rem; /* Space for footer */
   background-color: var(--background-light);
 }
@@ -238,11 +238,35 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 992px) {
+  .me-container {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .me-section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .intro {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .me-header {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+  }
+  
+  .me-section h2 {
+    font-size: 2rem;
   }
   
   .me-section h2:after {
@@ -252,5 +276,63 @@
   
   .interests-personal-container {
     grid-template-columns: 1fr;
+  }
+  
+  .what-i-love {
+    padding: 1.2rem;
+  }
+  
+  .skill-item {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .me-section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .me-container {
+    padding: 1.2rem;
+    margin: 0 0.5rem;
+    max-width: 100%;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .me-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .me-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .intro {
+    font-size: 1rem;
+  }
+  
+  .skills-container {
+    gap: 8px;
+  }
+  
+  .skill-item {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .cta p {
+    font-size: 1rem;
+  }
+  
+  .what-i-love ul {
+    padding-left: 1rem;
+  }
+  
+  .what-i-love li {
+    font-size: 0.95rem;
   }
 }

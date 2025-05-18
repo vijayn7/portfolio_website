@@ -145,7 +145,7 @@ function Me() {
             className="interests card"
             variants={itemVariants}
           >
-            <h3><FontAwesomeIcon icon={faGraduationCap} className="section-icon" /> What excites me:</h3>
+            <h3><FontAwesomeIcon icon={faGraduationCap} className="section-icon" /> What inspires me:</h3>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -162,7 +162,7 @@ function Me() {
               {[
                 { icon: faCode, text: 'Mentoring student coders' },
                 { icon: faRobot, text: 'Tinkering with robots' },
-                { icon: faCamera, text: 'Chasing Michigan sunsets with my camera' }
+                { icon: faCamera, text: 'Chasing sunsets with my camera' }
               ].map((hobby, index) => (
                 <motion.div 
                   className="hobby-item"
