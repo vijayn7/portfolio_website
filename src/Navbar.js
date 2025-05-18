@@ -1,18 +1,30 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Navbar.css';
 
 function Navbar() {
   return (
-    <nav className="Navbar">
+    <motion.nav 
+      className="Navbar"
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 120, damping: 10 }}
+    >
       <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#me">Me</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#store">Store</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#blog">Blog</a></li>
+        {['home', 'me', 'portfolio', 'store', 'stack', 'blog'].map((item, index) => (
+          <motion.li 
+            key={item}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <a href={`#${item}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</a>
+          </motion.li>
+        ))}
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
 

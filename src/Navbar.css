@@ -1,12 +1,18 @@
+@import './colors.css';
+
 .Navbar {
   display: flex;
   justify-content: center;
   padding: 0.8rem 1.5rem;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 50px;
   width: fit-content;
   margin: 1rem auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px var(--shadow-light);
+  border-bottom: 2px solid var(--primary-color);
+  position: sticky;
+  top: 10px;
+  z-index: 1000;
 }
 
 .nav-links {
@@ -22,13 +28,30 @@
 }
 
 .nav-links a {
-  color: #333;
+  color: var(--secondary-color);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-bottom: 3px;
 }
 
 .nav-links a:hover {
-  color: #666;
+  color: var(--primary-color);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }

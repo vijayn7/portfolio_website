@@ -1,7 +1,10 @@
+@import './colors.css';
+
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--background-light);
 }
 
 main {
@@ -21,7 +24,12 @@ main {
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--primary-color);
+  transition: color 0.2s ease;
+}
+
+.App-link:hover {
+  color: var(--primary-light);
 }
 
 @keyframes App-logo-spin {
