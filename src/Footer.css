@@ -1,9 +1,10 @@
 .Footer {
-  background-color: #282c34; 
-  color: white;
+  background-color: white;
+  color: #333;
   text-align: center;
   padding: 1rem 0;
   position: fixed;
   bottom: 0;
   width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
 }
