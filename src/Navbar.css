@@ -54,6 +54,11 @@
   color: var(--primary-color);
 }
 
+.desktop-nav-links li.active a {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
 .desktop-nav-links a::after {
   content: '';
   position: absolute;
@@ -66,7 +71,7 @@
 }
 
 .desktop-nav-links a:hover::after,
-.desktop-nav-links a.active::after {
+.desktop-nav-links li.active a::after {
   width: 100%;
 }
 
@@ -91,6 +96,11 @@
   background: linear-gradient(135deg, #7a45e6 0%, #4f24a3 100%); /* Darker purple gradient on hover */
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(140, 82, 255, 0.4);
+}
+
+.hire-me-button.active {
+  background: linear-gradient(135deg, #6f3fcc 0%, #4e1fa0 100%);
+  box-shadow: 0 4px 12px rgba(140, 82, 255, 0.5);
 }
 
 .hire-me-button::after {
@@ -250,6 +260,13 @@
   color: var(--secondary-color);
   text-decoration: none;
   font-weight: 500;
+}
+
+.mobile-menu-links li.active a {
+  color: var(--primary-color);
+  font-weight: 600;
+  background-color: rgba(140, 82, 255, 0.1);
+  border-radius: 8px;
 }
 
 .mobile-menu-links a:hover {

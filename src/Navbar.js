@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -6,7 +6,9 @@ import './Navbar.css';
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const navItems = ['home', 'me', 'portfolio', 'store', 'stack', 'blog'];
+  const observerRef = useRef(null);
 
   // Close menu when ESC key is pressed
   useEffect(() => {
@@ -30,6 +32,48 @@ function Navbar() {
       document.body.style.overflow = '';
     };
   }, [mobileMenuOpen]);
+
+  // Set up intersection observer for section highlighting
+  useEffect(() => {
+    // Clean up previous observer
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    // Set up observer options
+    const options = {
+      root: null, // use viewport
+      rootMargin: "-50% 0px", // Consider section in view when it's 50% in viewport
+      threshold: 0
+    };
+
+    // Update active section based on which one is in the viewport
+    const callback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          setActiveSection(id);
+        }
+      });
+    };
+
+    // Create new observer
+    observerRef.current = new IntersectionObserver(callback, options);
+
+    // Observe all sections
+    navItems.forEach(item => {
+      const element = document.getElementById(item);
+      if (element) {
+        observerRef.current.observe(element);
+      }
+    });
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [navItems]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -56,6 +100,7 @@ function Navbar() {
               transition={{ delay: index * 0.05, duration: 0.2 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className={activeSection === item ? 'active' : ''}
             >
               <a href={`#${item}`}>{item === 'home' ? 'Home' : item === 'me' ? 'Me' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
             </motion.li>
@@ -70,7 +115,7 @@ function Navbar() {
           whileTap={{ scale: 0.95 }}
           className="hire-me-button-container"
         >
-          <a href="#contact" className="hire-me-button">Hire Me</a>
+          <a href="#contact" className={`hire-me-button ${activeSection === 'contact' ? 'active' : ''}`}>Hire Me</a>
         </motion.div>
       </div>
       
@@ -130,6 +175,7 @@ function Navbar() {
             transition={{ delay: index * 0.05, duration: 0.2, ease: "linear" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className={activeSection === item ? 'active' : ''}
           >
             <a href={`#${item}`} onClick={closeMobileMenu}>{item.charAt(0).toUpperCase() + item.slice(1)}</a>
           </motion.li>

@@ -12,9 +12,11 @@ function App() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
+      <a href="#main-content" className="skip-to-content">Skip to content</a>
       <Navbar />
       <AnimatePresence mode="wait">
         <motion.main
+          id="main-content"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
