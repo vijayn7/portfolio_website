@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +7,7 @@ import './Navbar.css';
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const navItems = ['home', 'me', 'portfolio', 'store', 'stack', 'blog'];
+  const navItems = useMemo(() => ['home', 'me', 'portfolio', 'store', 'stack', 'blog'], []);
   const observerRef = useRef(null);
 
   // Close menu when ESC key is pressed
