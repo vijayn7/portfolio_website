@@ -57,10 +57,21 @@ function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a href={`#${item}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</a>
+              <a href={`#${item}`}>{item === 'home' ? 'Home' : item === 'me' ? 'Me' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
             </motion.li>
           ))}
         </ul>
+        <motion.div 
+          key="desktop-hire-me"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: navItems.length * 0.05, duration: 0.2 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="hire-me-button-container"
+        >
+          <a href="#contact" className="hire-me-button">Hire Me</a>
+        </motion.div>
       </div>
       
       <div className="mobile-nav">

@@ -2,23 +2,29 @@
 
 /* Main navbar container */
 .Navbar {
-  position: sticky;
-  top: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  margin: 1rem auto;
+  padding: 0.5rem;
+  padding-top: 1rem;
   background-color: transparent;
+  width: 100%;
 }
 
 /* Desktop navigation */
 .desktop-nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--white);
   border-radius: 50px;
-  padding: 0.8rem 1.5rem;
-  box-shadow: 0 4px 15px var(--shadow-light);
-  margin: 0 auto;
+  padding: 0.5rem 1.5rem; /* Reduced vertical padding from 0.8rem to 0.5rem */
+  box-shadow: 0 4px 15px var(--shadow-dark);
+  margin: 0 auto auto auto;
   width: fit-content;
+  max-width: 100%;
 }
 
 .desktop-nav-links {
@@ -27,6 +33,7 @@
   margin: 0;
   padding: 0;
   gap: 2rem;
+  flex-wrap: nowrap;
 }
 
 .desktop-nav-links li {
@@ -63,6 +70,52 @@
   width: 100%;
 }
 
+/* Hire me button styles */
+.hire-me-button-container {
+  margin-left: 1.5rem;
+}
+
+.hire-me-button {
+  background: linear-gradient(135deg, #8c52ff 0%, #5f2dbd 100%); /* Purple gradient */
+  color: white !important;
+  padding: 0.45rem 1.5rem !important; /* Slightly reduced vertical padding */
+  border-radius: 50px;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 8px rgba(140, 82, 255, 0.3);
+  transition: all 0.2s ease !important;
+  text-decoration: none;
+  display: block;
+}
+
+.hire-me-button:hover {
+  background: linear-gradient(135deg, #7a45e6 0%, #4f24a3 100%); /* Darker purple gradient on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(140, 82, 255, 0.4);
+}
+
+.hire-me-button::after {
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .desktop-nav {
+    padding: 0.7rem 1.2rem;
+  }
+  
+  .desktop-nav-links {
+    gap: 1.5rem;
+  }
+  
+  .desktop-nav-links a {
+    font-size: 0.95rem;
+  }
+  
+  .hire-me-button {
+    padding: 0.4rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
 /* Mobile navigation */
 .mobile-nav {
   display: none;
@@ -72,7 +125,7 @@
   border-radius: 15px;
   padding: 0.8rem 1rem;
   box-shadow: 0 4px 15px var(--shadow-light);
-  width: calc(100% - 3rem);
+  width: calc(100% - 2rem);
   margin: 0 auto;
   border-bottom: 2px solid var(--primary-color);
 }
@@ -218,27 +271,12 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .mobile-nav {
-    width: calc(100% - 2rem);
-    margin: 0.5rem auto;
-    padding: 0.6rem 0.8rem;
+    padding: 0.7rem 0.9rem;
   }
   
   .name {
-    font-size: 0.9rem;
-    max-width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .mobile-name {
-    font-size: 1.2rem;
-  }
-  
-  .mobile-menu-links {
-    width: 85%;
-    padding: 1.2rem;
+    font-size: 0.85rem;
   }
 }
