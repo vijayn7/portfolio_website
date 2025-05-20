@@ -39,7 +39,6 @@
 main {
   flex: 1;
   padding: 1rem;
-  padding-top: 2rem; /* Add extra padding to the top to account for the fixed navbar */
 }
 
 .App-logo {
