@@ -253,11 +253,23 @@
   padding: 2rem;
   margin-top: 0; /* Remove the top margin as this is the first section */
   position: relative;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), 
-              url('profile-image.jpg'); /* Fixed path to match React public folder convention */
-  background-size: cover;
-  background-position: center;
+  background-color: white; /* White base background */
+  background-image: radial-gradient(circle, var(--primary-color) 1px, transparent 1px);
+  background-size: 30px 30px; /* Adjust size of dots grid */
   background-attachment: fixed;
+  position: relative;
+}
+
+/* Add overlay gradient */
+.home-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(138, 43, 226, 0.15) 0%, rgba(255, 255, 255, 0.9) 70%);
+  pointer-events: none;
 }
 
 .home-content {
@@ -299,7 +311,7 @@
 .home-intro {
   font-size: 1.4rem;
   line-height: 1.6;
-  color: var(--text-light);
+  color: var(--text-dark); /* Darker text for better readability on light background */
   margin-bottom: 3rem;
 }
 
