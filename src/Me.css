@@ -253,7 +253,7 @@
   padding: 2rem;
   margin-top: 0; /* Remove the top margin as this is the first section */
   position: relative;
-  background-color: white; /* White base background */
+  background-color: rgba(138, 43, 226, 0.08); /* Very light purple base background */
   background-image: radial-gradient(circle, var(--primary-color) 1px, transparent 1px);
   background-size: 30px 30px; /* Adjust size of dots grid */
   background-attachment: fixed;
@@ -268,14 +268,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, rgba(138, 43, 226, 0.15) 0%, rgba(255, 255, 255, 0.9) 70%);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.95) 0%, rgba(138, 43, 226, 0.2) 85%);
   pointer-events: none;
 }
 
 .home-content {
-  max-width: 900px;
+  max-width: 1500px; /* Increased from 1200px to 1500px - much wider */
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 3rem 4rem; /* Increased horizontal padding for better spacing */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(138, 43, 226, 0.1); /* Subtle purple shadow */
+  backdrop-filter: blur(5px); /* Slight blur effect for modern browsers */
+  z-index: 1; /* Ensure content appears above the background gradient */
+  position: relative;
 }
 
 .main-title {
