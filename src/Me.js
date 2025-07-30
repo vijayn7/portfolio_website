@@ -6,36 +6,36 @@ import { faCode, faLaptopCode, faBriefcase, faGraduationCap, faCamera, faRobot, 
 import { faReact, faJava, faPython, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 function Me() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
+  // const containerVariants = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.2
+  //     }
+  //   }
+  // };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 }
-    }
-  };
+  // const itemVariants = {
+  //   hidden: { y: 20, opacity: 0 },
+  //   visible: {
+  //     y: 0,
+  //     opacity: 1,
+  //     transition: { duration: 0.5 }
+  //   }
+  // };
 
-  const skillVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: (i) => ({
-      scale: 1,
-      opacity: 1,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5
-      }
-    })
-  };
+  // const skillVariants = {
+  //   hidden: { scale: 0.8, opacity: 0 },
+  //   visible: (i) => ({
+  //     scale: 1,
+  //     opacity: 1,
+  //     transition: {
+  //       delay: i * 0.1,
+  //       duration: 0.5
+  //     }
+  //   })
+  // };
 
   return (
     <>
