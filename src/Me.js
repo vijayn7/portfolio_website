@@ -2,7 +2,7 @@ import React from 'react';
 import './Me.css';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faLaptopCode, faBriefcase, faGraduationCap, faCamera, faRobot, faMountain, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faLaptopCode, faBriefcase, faGraduationCap, faCamera, faRobot, faMountain } from '@fortawesome/free-solid-svg-icons';
 import { faReact, faJava, faPython, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 function Me() {
@@ -40,87 +40,20 @@ function Me() {
   return (
     <>
       <motion.section 
-        id="home" 
-        className="home-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={containerVariants}
-      >
-        <motion.div className="home-content" variants={itemVariants}>
-          <motion.h1 
-            className="main-title"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            Vijay Raju Nannapuraju
-          </motion.h1>
-          
-          <motion.div 
-            className="title-container"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-          >
-            <h2 className="subtitle">Computer Engineering Student</h2>
-            <div className="title-divider"></div>
-            <h2 className="subtitle">Software Developer</h2>
-          </motion.div>
-          
-          <motion.p 
-            className="home-intro"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.3, duration: 0.8 }}
-          >
-            Building scalable solutions with modern technologies.
-            <br />
-            Based in Michigan, available worldwide.
-          </motion.p>
-          
-          <motion.div 
-            className="cta-buttons"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6, duration: 0.5 }}
-          >
-            <a href="#portfolio" className="cta-button primary">
-              View My Work
-            </a>
-            <a href="#contact" className="cta-button secondary">
-              Get In Touch
-            </a>
-          </motion.div>
-        </motion.div>
-        
-        <motion.div 
-          className="scroll-indicator"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.2, duration: 0.8 }}
-          whileHover={{ y: 5 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <a href="#me">
-            <span>Scroll Down</span>
-            <FontAwesomeIcon icon={faArrowDown} className="scroll-icon" />
-          </a>
-        </motion.div>
-      </motion.section>
-    
-      <motion.section 
         className="me-section" 
-        id="me"
-        initial="hidden"
-        whileInView="visible"
+        id="home"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.1 }}
-        variants={containerVariants}
+        transition={{ duration: 0.5 }}
       >
         <div className="me-container">
           <motion.div 
             className="me-header"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
           >
             <motion.div 
               className="profile-image-container"
@@ -139,14 +72,18 @@ function Me() {
             </motion.div>
             <motion.div 
               className="me-title"
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
             >
               <h2>About Me</h2>
               <motion.p 
                 className="intro"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
               >
                 Hi, I'm <motion.span 
                   className="name-highlight"
@@ -160,7 +97,10 @@ function Me() {
           
           <motion.div 
             className="what-i-love"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
           >
             <h3><FontAwesomeIcon icon={faBriefcase} className="section-icon" /> What I love doing:</h3>
             <ul>
@@ -171,7 +111,10 @@ function Me() {
               ].map((item, index) => (
                 <motion.li 
                   key={index}
-                  variants={itemVariants}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   whileHover={{ x: 5, transition: { duration: 0.2 } }}
                 >
                   {item.text}
@@ -182,7 +125,10 @@ function Me() {
           
           <motion.div 
             className="toolkit card"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             id="stack"
           >
             <h3><FontAwesomeIcon icon={faLaptopCode} className="section-icon" /> Toolkit:</h3>
@@ -198,12 +144,13 @@ function Me() {
                 <motion.div 
                   className="skill-item"
                   key={index}
-                  custom={index}
-                  variants={skillVariants}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  viewport={{ once: true }}
                   whileHover={{ 
-                    scale: 1.1, 
-                    rotate: [0, -5, 5, -5, 0],
-                    transition: { duration: 0.3 }
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
                   }}
                 >
                   <FontAwesomeIcon icon={skill.icon} className={`skill-icon ${skill.className}`} /> {skill.name}
@@ -215,19 +162,26 @@ function Me() {
           <div className="interests-personal-container">
             <motion.div 
               className="interests card"
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
             >
               <h3><FontAwesomeIcon icon={faGraduationCap} className="section-icon" /> What inspires me:</h3>
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
+                transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
               >Closing the loop between code and users, data-informed performance wins, and clean, expressive UIs.</motion.p>
             </motion.div>
             
             <motion.div 
               className="personal card"
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
             >
               <h3><FontAwesomeIcon icon={faMountain} className="section-icon" /> Off the clock:</h3>
               <div className="hobbies">
@@ -239,10 +193,11 @@ function Me() {
                   <motion.div 
                     className="hobby-item"
                     key={index}
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.2, duration: 0.5 }}
-                    whileHover={{ scale: 1.05 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.3 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.02 }}
                   >
                     <FontAwesomeIcon icon={hobby.icon} className="hobby-icon" />
                     <p>{hobby.text}</p>
@@ -254,7 +209,10 @@ function Me() {
           
           <motion.div 
             className="cta"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             id="contact"
@@ -265,7 +223,7 @@ function Me() {
       </motion.section>
       
       {/* Placeholder sections for other content */}
-      <section id="portfolio" className="placeholder-section">
+      {/* <section id="portfolio" className="placeholder-section">
         <h2>Portfolio</h2>
         <p>Portfolio content would go here</p>
       </section>
@@ -278,7 +236,7 @@ function Me() {
       <section id="blog" className="placeholder-section">
         <h2>Blog</h2>
         <p>Blog content would go here</p>
-      </section>
+      </section> */}
     </>
   );
 }

@@ -13,58 +13,32 @@ function Footer() {
   ];
 
   return (
-    <motion.footer 
-      className="Footer"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      viewport={{ once: true }}
-    >
+    <footer className="Footer">
       <div className="footer-content">
-        <motion.div 
-          className="social-links"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
+        <div className="social-links">
           {socialLinks.map((social, index) => (
-            <motion.a
+            <a
               key={index}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * index + 0.4 }}
+              className="social-link"
             >
               <FontAwesomeIcon icon={social.icon} className="social-icon" />
-            </motion.a>
+            </a>
           ))}
-        </motion.div>
+        </div>
         
-        <motion.p
-          whileHover={{ scale: 1.05 }}
-        >
+        <p className="copyright">
           &copy; {new Date().getFullYear()} Vijay Raju Nannapuraju. All rights reserved.
-        </motion.p>
+        </p>
         
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          Made with <motion.span 
-            initial={{ scale: 1 }}
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ repeat: Infinity, repeatDelay: 0.5, duration: 0.5 }}
-            style={{ color: '#ff6b6b', display: 'inline-block' }}
-          >♥</motion.span> and React
-        </motion.p>
+        <p className="made-with">
+          Made with <span className="heart">♥</span> and React
+        </p>
       </div>
-    </motion.footer>
+    </footer>
   );
 }
 

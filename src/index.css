@@ -6,7 +6,7 @@ html {
   height: 100%;
   overflow-x: hidden;
   position: relative;
-  overscroll-behavior: none;
+  scroll-behavior: auto;
 }
 
 body {
@@ -19,7 +19,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   overflow-x: hidden;
-  overscroll-behavior-y: none;
 }
 
 code {
