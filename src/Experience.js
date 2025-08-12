@@ -20,7 +20,7 @@ function Experience() {
       technologies: ["Kubernetes", "Datadog", "Slack API", "Java", "Spring Boot", "TypeScript", "React", "GitHub Actions"],
       type: "internship",
       logo: "/assets/aptiv_logo.jpeg",
-      color: "#0066cc"
+      color: "#ff6600ff"
     },
     {
       company: "FIRST Robotics Competition",
@@ -35,7 +35,7 @@ function Experience() {
       technologies: ["Java", "GitHub Actions", "Java Logger", "Team Leadership", "Code Review"],
       type: "leadership",
       logo: "/assets/First Robotics Competition.jpeg",
-      color: "#ff6b35"
+      color: "#8f03d4ff"
     },
     {
       company: "University of Michigan Tech Shop",
@@ -50,7 +50,7 @@ function Experience() {
       technologies: ["POS Systems", "Customer Service", "Technical Consultation", "Communication"],
       type: "current",
       logo: "/assets/Michigan.jpeg",
-      color: "#00274c"
+      color: "#00284eff"
     },
     {
       company: "Kumon Math Instructor",
@@ -65,7 +65,7 @@ function Experience() {
       technologies: ["Student Assessment", "Lesson Planning", "Progress Evaluation", "Parent Communication"],
       type: "education",
       logo: "/assets/kumon_logo.jpeg",
-      color: "#2e86ab"
+      color: "#4d99baff"
     }
   ];
 
