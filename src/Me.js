@@ -4,39 +4,9 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faLaptopCode, faBriefcase, faGraduationCap, faCamera, faRobot, faMountain } from '@fortawesome/free-solid-svg-icons';
 import { faReact, faJava, faPython, faGithub } from '@fortawesome/free-brands-svg-icons';
+import Experience from './Experience';
 
 function Me() {
-  // const containerVariants = {
-  //   hidden: { opacity: 0 },
-  //   visible: {
-  //     opacity: 1,
-  //     transition: {
-  //       staggerChildren: 0.2
-  //     }
-  //   }
-  // };
-
-  // const itemVariants = {
-  //   hidden: { y: 20, opacity: 0 },
-  //   visible: {
-  //     y: 0,
-  //     opacity: 1,
-  //     transition: { duration: 0.5 }
-  //   }
-  // };
-
-  // const skillVariants = {
-  //   hidden: { scale: 0.8, opacity: 0 },
-  //   visible: (i) => ({
-  //     scale: 1,
-  //     opacity: 1,
-  //     transition: {
-  //       delay: i * 0.1,
-  //       duration: 0.5
-  //     }
-  //   })
-  // };
-
   return (
     <>
       <motion.section 
@@ -102,7 +72,8 @@ function Me() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3><FontAwesomeIcon icon={faBriefcase} className="section-icon" /> What I love doing:</h3>
+            <h3><FontAwesomeIcon icon={faBriefcase} className="section-icon" /> What drives me</h3>
+            <p className="section-subtitle">The passions that fuel my approach to software development</p>
             <ul>
               {[
                 { text: <><span className="highlight">Building & automating:</span> I refine development workflows and deployment processes so teams can ship quickly and confidently.</> },
@@ -131,33 +102,50 @@ function Me() {
             viewport={{ once: true }}
             id="stack"
           >
-            <h3><FontAwesomeIcon icon={faLaptopCode} className="section-icon" /> Toolkit:</h3>
+            <h3><FontAwesomeIcon icon={faLaptopCode} className="section-icon" /> Technical Toolkit</h3>
+            <p className="section-subtitle">Technologies and tools I use to build exceptional software</p>
             <div className="skills-container">
               {[
-                { icon: faReact, name: 'React', className: 'react' },
-                { icon: faCode, name: 'Tailwind', className: '' },
-                { icon: faJava, name: 'Java', className: 'java' },
-                { icon: faPython, name: 'Python', className: 'python' },
-                { icon: faGithub, name: 'GitHub', className: '' },
-                { icon: faCode, name: 'CI/CD', className: '' }
+                { icon: faReact, name: 'React', className: 'react', level: 'Advanced' },
+                { icon: faJava, name: 'Java', className: 'java', level: 'Expert' },
+                { icon: faPython, name: 'Python', className: 'python', level: 'Advanced' },
+                { icon: faCode, name: 'TypeScript', className: 'typescript', level: 'Advanced' },
+                { icon: faGithub, name: 'GitHub', className: 'github', level: 'Expert' },
+                { icon: faCode, name: 'Kubernetes', className: 'kubernetes', level: 'Intermediate' },
+                { icon: faCode, name: 'Spring Boot', className: 'spring', level: 'Advanced' },
+                { icon: faCode, name: 'CI/CD', className: 'cicd', level: 'Advanced' }
               ].map((skill, index) => (
                 <motion.div 
-                  className="skill-item"
+                  className={`skill-item ${skill.className}`}
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
+                  whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.08,
+                    type: "spring",
+                    stiffness: 100
+                  }}
                   viewport={{ once: true }}
                   whileHover={{ 
-                    scale: 1.05,
+                    scale: 1.1,
+                    y: -5,
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <FontAwesomeIcon icon={skill.icon} className={`skill-icon ${skill.className}`} /> {skill.name}
+                  <div className="skill-icon-container">
+                    <FontAwesomeIcon icon={skill.icon} className={`skill-icon ${skill.className}`} />
+                  </div>
+                  <div className="skill-info">
+                    <span className="skill-name">{skill.name}</span>
+                    <span className="skill-level">{skill.level}</span>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+          
+          <Experience />
           
           <div className="interests-personal-container">
             <motion.div 
@@ -217,26 +205,20 @@ function Me() {
             whileTap={{ scale: 0.98 }}
             id="contact"
           >
-            <p>I'm looking for new challenges—internships or roles where I can keep learning and ship software that matters. Let's talk!</p>
+            <div className="cta-content">
+              <h3>Let's Build Something Amazing Together</h3>
+              <p>I'm looking for new challenges—internships or roles where I can keep learning and ship software that matters. Ready to make an impact?</p>
+              <motion.button 
+                className="cta-button"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get In Touch
+              </motion.button>
+            </div>
           </motion.div>
         </div>
       </motion.section>
-      
-      {/* Placeholder sections for other content */}
-      {/* <section id="portfolio" className="placeholder-section">
-        <h2>Portfolio</h2>
-        <p>Portfolio content would go here</p>
-      </section>
-      
-      <section id="store" className="placeholder-section">
-        <h2>Store</h2>
-        <p>Store content would go here</p>
-      </section>
-      
-      <section id="blog" className="placeholder-section">
-        <h2>Blog</h2>
-        <p>Blog content would go here</p>
-      </section> */}
     </>
   );
 }

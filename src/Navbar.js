@@ -7,7 +7,7 @@ import './Navbar.css';
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const navItems = useMemo(() => ['home', 'me', 'portfolio', 'store', 'stack', 'blog'], []);
+  const navItems = useMemo(() => ['home', 'stack', 'experience', 'contact'], []);
   const observerRef = useRef(null);
 
   // Close menu when ESC key is pressed
@@ -102,7 +102,7 @@ function Navbar() {
               whileTap={{ scale: 0.95 }}
               className={activeSection === item ? 'active' : ''}
             >
-              <a href={`#${item}`}>{item === 'home' ? 'Home' : item === 'me' ? 'Me' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
+              <a href={`#${item}`}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'contact' ? 'Contact' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
             </motion.li>
           ))}
         </ul>
@@ -177,7 +177,7 @@ function Navbar() {
             whileTap={{ scale: 0.95 }}
             className={activeSection === item ? 'active' : ''}
           >
-            <a href={`#${item}`} onClick={closeMobileMenu}>{item.charAt(0).toUpperCase() + item.slice(1)}</a>
+            <a href={`#${item}`} onClick={closeMobileMenu}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'contact' ? 'Contact' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
           </motion.li>
         ))}
       </motion.ul>
