@@ -1,9 +1,10 @@
 import './Me.css';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faBriefcase, faGraduationCap, faCamera, faRobot, faMountain } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase} from '@fortawesome/free-solid-svg-icons';
 import Experience from './Experience';
 import Skills from './Skills';
+import Education from './Education';
 
 function Me() {
   return (
@@ -96,53 +97,7 @@ function Me() {
           
           <Experience />
           
-          <div className="interests-personal-container">
-            <motion.div 
-              className="interests card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h3><FontAwesomeIcon icon={faGraduationCap} className="section-icon" /> What inspires me:</h3>
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-              >Closing the loop between code and users, data-informed performance wins, and clean, expressive UIs.</motion.p>
-            </motion.div>
-            
-            <motion.div 
-              className="personal card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h3><FontAwesomeIcon icon={faMountain} className="section-icon" /> Off the clock:</h3>
-              <div className="hobbies">
-                {[
-                  { icon: faCode, text: 'Mentoring student coders' },
-                  { icon: faRobot, text: 'Tinkering with robots' },
-                  { icon: faCamera, text: 'Chasing sunsets with my camera' }
-                ].map((hobby, index) => (
-                  <motion.div 
-                    className="hobby-item"
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.3 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <FontAwesomeIcon icon={hobby.icon} className="hobby-icon" />
-                    <p>{hobby.text}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+          <Education />
           
           <motion.div 
             className="cta"
