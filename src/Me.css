@@ -246,7 +246,13 @@
   }
   
   .highlight {
-    font-size: 1.03em;
+    font-size: 1.03rem;
+    transition: color 0.3s, font-size 0.3s;
+  }
+
+  .highlight:hover {
+    color: var(--primary-light);
+    font-size: 1.10rem;
   }
 }
 

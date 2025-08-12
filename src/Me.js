@@ -72,7 +72,6 @@ function Me() {
             viewport={{ once: true }}
           >
             <h3><FontAwesomeIcon icon={faBriefcase} className="section-icon" /> What drives me</h3>
-            <p className="section-subtitle">The passions that fuel my approach to software development</p>
             <ul>
               {[
                 { text: <><span className="highlight">Building & automating:</span> I refine development workflows and deployment processes so teams can ship quickly and confidently.</> },

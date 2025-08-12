@@ -157,9 +157,6 @@ function Skills() {
           <FontAwesomeIcon icon={faLaptopCode} className="section-icon" /> 
           Technical Toolkit
         </h3>
-        <p className="section-subtitle">
-          Technologies and tools I use to build exceptional software
-        </p>
       </motion.div>
 
       <motion.div 

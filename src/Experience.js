@@ -90,9 +90,6 @@ function Experience() {
           <FontAwesomeIcon icon={faBuilding} className="section-icon" /> 
           Professional Experience
         </h3>
-        <p className="section-subtitle">
-          Building impactful software solutions and leading teams across diverse environments
-        </p>
       </motion.div>
       
       <div className="experience-timeline">
