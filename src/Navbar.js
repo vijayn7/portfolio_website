@@ -1,37 +1,11 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 import './Navbar.css';
 
 function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const navItems = useMemo(() => ['home', 'stack', 'experience', 'projects', 'education'], []);
   const observerRef = useRef(null);
-
-  // Close menu when ESC key is pressed
-  useEffect(() => {
-    const handleEscKey = (event) => {
-      if (event.key === 'Escape' && mobileMenuOpen) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleEscKey);
-    
-    // Prevent body scroll when menu is open
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscKey);
-      document.body.style.overflow = '';
-    };
-  }, [mobileMenuOpen]);
 
   // Set up intersection observer for section highlighting
   useEffect(() => {
@@ -92,14 +66,6 @@ function Navbar() {
     };
   }, [navItems]);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
-
   return (
     <motion.nav 
       className="Navbar"
@@ -107,86 +73,21 @@ function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      <div className="desktop-nav">
-        <ul className="desktop-nav-links">
-          {navItems.map((item, index) => (
-            <motion.li 
-              key={`desktop-${item}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: index * 0.05, duration: 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={activeSection === item ? 'active' : ''}
-            >
-              <a href={`#${item}`}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'projects' ? 'Projects' : item === 'education' ? 'Education' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
-            </motion.li>
-          ))}
-        </ul>
-      </div>
-      
-      <div className="mobile-nav">
-        <div className="nav-brand">
-          <h1 className="name">Vijay Raju Nannapuraju</h1>
-        </div>
-        
-        <button 
-          className={`mobile-menu-btn ${mobileMenuOpen ? 'hidden' : ''}`}
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          <FontAwesomeIcon icon={faBars} />
-        </button>
-      </div>
-      
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div 
-            className="menu-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, ease: "linear" }}
-            onClick={closeMobileMenu}
-          />
-        )}
-      </AnimatePresence>
-
-      <motion.ul 
-        className={`mobile-menu-links ${mobileMenuOpen ? 'active' : ''}`}
-        animate={{ 
-          x: mobileMenuOpen ? 0 : '-100%'
-        }}
-        transition={{ 
-          duration: 0.3,
-          ease: "linear"
-        }}
-      >
-        <div className="mobile-menu-header">
-          <h2 className="mobile-name">Vijay Raju Nannapuraju</h2>
-          <button 
-            className="close-menu"
-            onClick={closeMobileMenu}
-            aria-label="Close mobile menu"
-          >
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
-        </div>
-        
+      <ul className="nav-links">
         {navItems.map((item, index) => (
           <motion.li 
-            key={`mobile-${item}`}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.05, duration: 0.2, ease: "linear" }}
+            key={`nav-${item}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: index * 0.05, duration: 0.2 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={activeSection === item ? 'active' : ''}
           >
-            <a href={`#${item}`} onClick={closeMobileMenu}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'projects' ? 'Projects' : item === 'education' ? 'Education' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
+            <a href={`#${item}`}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'projects' ? 'Projects' : item === 'education' ? 'Education' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
           </motion.li>
         ))}
-      </motion.ul>
+      </ul>
     </motion.nav>
   );
 }
