@@ -137,37 +137,6 @@
   border-top: 2px solid var(--primary-color);
 }
 
-/* Skills section */
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 1rem;
-}
-
-.skill-item {
-  background-color: var(--background-light);
-  padding: 0.6rem 1rem;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  color: var(--text-dark);
-  box-shadow: 0 2px 5px var(--shadow-light);
-}
-
-.skill-icon {
-  margin-right: 8px;
-  font-size: 1.1rem;
-  color: var(--text-dark);
-}
-
-.skill-icon.react,
-.skill-icon.java,
-.skill-icon.python {
-  color: var(--primary-color);
-}
-
 /* Interests and personal container */
 .interests-personal-container {
   display: grid;
@@ -287,10 +256,6 @@
     padding: 1.2rem;
   }
   
-  .skill-item {
-    font-size: 0.9rem;
-  }
-  
   .me-section h3 {
     font-size: 1.4rem;
     padding-bottom: 0.4rem;
@@ -333,15 +298,6 @@
   
   .intro {
     font-size: 1rem;
-  }
-  
-  .skills-container {
-    gap: 8px;
-  }
-  
-  .skill-item {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.85rem;
   }
   
   .cta p {

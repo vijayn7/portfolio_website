@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faLaptopCode, faBriefcase, faGraduationCap, faCamera, faRobot, faMountain } from '@fortawesome/free-solid-svg-icons';
 import { faReact, faJava, faPython, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Experience from './Experience';
+import Skills from './Skills';
 
 function Me() {
   return (
@@ -94,56 +95,7 @@ function Me() {
             </ul>
           </motion.div>
           
-          <motion.div 
-            className="toolkit card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            id="stack"
-          >
-            <h3><FontAwesomeIcon icon={faLaptopCode} className="section-icon" /> Technical Toolkit</h3>
-            <p className="section-subtitle">Technologies and tools I use to build exceptional software</p>
-            <div className="skills-container">
-              {[
-                { icon: faReact, name: 'React', className: 'react', level: 'Advanced' },
-                { icon: faJava, name: 'Java', className: 'java', level: 'Expert' },
-                { icon: faPython, name: 'Python', className: 'python', level: 'Advanced' },
-                { icon: faCode, name: 'TypeScript', className: 'typescript', level: 'Advanced' },
-                { icon: faGithub, name: 'GitHub', className: 'github', level: 'Expert' },
-                { icon: faCode, name: 'Kubernetes', className: 'kubernetes', level: 'Intermediate' },
-                { icon: faCode, name: 'Spring Boot', className: 'spring', level: 'Advanced' },
-                { icon: faCode, name: 'CI/CD', className: 'cicd', level: 'Advanced' }
-              ].map((skill, index) => (
-                <motion.div 
-                  className={`skill-item ${skill.className}`}
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
-                  whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: index * 0.08,
-                    type: "spring",
-                    stiffness: 100
-                  }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.1,
-                    y: -5,
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  <div className="skill-icon-container">
-                    <FontAwesomeIcon icon={skill.icon} className={`skill-icon ${skill.className}`} />
-                  </div>
-                  <div className="skill-info">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-level">{skill.level}</span>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          <Skills />
           
           <Experience />
           
