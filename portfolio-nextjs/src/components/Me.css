@@ -49,11 +49,14 @@
 }
 
 .me-section h2 {
-  font-size: 2.5rem;
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.25rem, 4vw, 2.75rem);
   color: var(--secondary-color);
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .me-section h2:after {
@@ -68,7 +71,8 @@
 }
 
 .me-section h3 {
-  font-size: 1.6rem;
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.4rem, 3vw, 1.7rem);
   color: var(--secondary-color);
   margin: 1.5rem 0 1rem 0;
   display: flex;
@@ -76,12 +80,15 @@
   font-weight: 600;
   border-bottom: 2px solid var(--primary-light);
   padding-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 
 .intro {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  line-height: 1.7;
   color: var(--text-light);
+  font-weight: 400;
 }
 
 .name-highlight {
@@ -105,15 +112,18 @@
 
 .what-i-love li {
   margin-bottom: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-dark);
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
 }
 
 /* Add styling for subheadings inside lists */
 .highlight {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary-color);
   font-size: 1.05em;
+  font-family: var(--font-primary);
 }
 
 /* Interests and personal container */
@@ -130,8 +140,10 @@
 }
 
 .interests p, .personal p {
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-light);
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
 }
 
 /* Hobbies section */
@@ -187,7 +199,9 @@
 .cta p {
   margin: 0;
   color: var(--white);
-  font-size: 1.1rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  font-family: var(--font-primary);
+  font-weight: 500;
 }
 
 /* Responsive adjustments */

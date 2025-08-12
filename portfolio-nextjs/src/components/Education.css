@@ -16,6 +16,7 @@
 
 .education .section-header h3 {
   font-size: 1.6rem;
+  font-family: var(--font-heading) !important;
   color: var(--secondary-color);
   margin: 0;
   display: flex;
@@ -45,6 +46,7 @@
 
 .education-header h4 {
   font-size: 1.4rem;
+  font-family: var(--font-heading) !important;
   color: var(--secondary-color);
   margin: 0;
   font-weight: 600;
@@ -72,6 +74,7 @@
 
 .education-subsection h5 {
   font-size: 1.2rem;
+  font-family: var(--font-heading) !important;
   color: var(--secondary-color);
   margin-bottom: 0.8rem;
   font-weight: 600;

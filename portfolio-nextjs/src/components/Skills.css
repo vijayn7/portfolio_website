@@ -12,6 +12,7 @@
 .section-header h3 {
   font-size: 2rem;
   font-weight: 700;
+  font-family: var(--font-heading) !important;
   color: var(--text-dark);
   margin-bottom: 0.5rem;
   display: flex;
