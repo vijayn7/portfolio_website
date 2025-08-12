@@ -1,0 +1,18 @@
+/* Global color variables for the portfolio website */
+:root {
+  --primary-color: #8a2be2; /* Vibrant purple */
+  --primary-color-dark: #7e38c3; /* Darker shade of primary */
+  --primary-light: #7e38c3; /* Darkened by ~15% for better contrast/accessibility */
+  --accent-color: #4a90e2; /* Blue accent */
+  --secondary-color: #121212; /* Rich black */
+  --secondary-light: #1e1e1e;
+  --background: #ffffff; /* Main background */
+  --background-light: #f8f8f8; /* Light background */
+  --text-dark: #222;
+  --text-light: #555;
+  --white: #ffffff;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --primary-shadow: rgba(138, 43, 226, 0.3);
+}

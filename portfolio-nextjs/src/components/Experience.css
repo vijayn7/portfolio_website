@@ -1,0 +1,29 @@
+@import './colors.css';
+
+/* Experience Section Styling */
+.experiences {
+  margin-bottom: 2.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.experience-timeline {
+  position: relative;
+}
+
+/* Responsive design for experience timeline */
+@media (max-width: 768px) {
+  .experience-timeline {
+    padding-left: 1rem;
+  }
+}

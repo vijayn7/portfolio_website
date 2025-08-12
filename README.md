@@ -1,6 +1,61 @@
-# Getting Started with Create React App
+# Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website showcasing my projects, experience, and skills. Built with Next.js for optimal performance and accessibility.
+
+## 🚀 Current Version: Next.js with SSG
+
+The active portfolio is now built with **Next.js** and features:
+- ✅ **Static Site Generation** for blazing fast performance
+- ✅ **Full accessibility** - works without JavaScript
+- ✅ **SEO optimized** with comprehensive meta tags
+- ✅ **TypeScript** for type safety
+- ✅ **Responsive design** for all devices
+
+### 📁 Project Location
+The main project is located in the `portfolio-nextjs/` directory.
+
+```bash
+cd portfolio-nextjs/
+npm install
+npm run build
+```
+
+## 🌐 Live Demo
+Visit the portfolio at: [Your Domain Here]
+
+## 📋 Features
+- **About Section**: Personal introduction and what drives me
+- **Skills**: Interactive technical skills showcase
+- **Experience**: Professional work history with achievements
+- **Projects**: Portfolio projects with highlights and technologies
+- **Education**: Academic background and coursework
+- **Contact**: Social links and contact information
+
+## 🛠️ Tech Stack
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: CSS Modules + Custom CSS
+- **Animations**: Framer Motion
+- **Icons**: Font Awesome
+- **Deployment**: Static Export (CDN-ready)
+
+## 🎯 Accessibility
+This portfolio is built with accessibility as a priority:
+- Works completely without JavaScript
+- WCAG compliant design
+- Screen reader friendly
+- Keyboard navigation support
+- Semantic HTML structure
+
+## 📖 Documentation
+See `portfolio-nextjs/README.md` for detailed setup and deployment instructions.
+
+## 🗂️ Archive
+The original React version is preserved in `archive/original-react/` for reference.
+
+---
+
+**Built with ♥ by Vijay Raju Nannapuraju**
 
 ## Available Scripts
 
