@@ -1,0 +1,46 @@
+@import './colors.css';
+
+/* Shared Component Styles */
+
+/* Section Icons */
+.section-icon {
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+/* Card styling */
+.card {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  border-top: 2px solid var(--primary-color);
+}
+
+/* Placeholder sections for testing navigation */
+.placeholder-section {
+  min-height: 50vh;
+  padding: 5rem 2rem;
+  margin: 2rem 0;
+  background-color: rgba(140, 82, 255, 0.03);
+  border-radius: 15px;
+  border: 1px dashed var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.placeholder-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
