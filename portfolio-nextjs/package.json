@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:netlify": "npm ci --legacy-peer-deps && next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "./deploy.sh",
