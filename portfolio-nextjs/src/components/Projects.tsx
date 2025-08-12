@@ -10,6 +10,20 @@ import { ProjectCard } from './index';
 function Projects() {
   const projects = [
     {
+      title: "Personal Portfolio Website",
+      period: "Aug 2025",
+      summary: "Designed and deployed a personal portfolio website to showcase projects, experience, and skills. Built with Next.js and Static Site Generation to ensure fast loading, SEO optimization, and accessibility. Features responsive design, smooth animations, and works without JavaScript enabled.",
+      highlights: [
+        "Static Site Generation with Next.js",
+        "Works without JavaScript enabled",
+        "SEO optimized",
+        "Smooth animations with Framer Motion"
+      ],
+      technologies: ["Next.js", "TypeScript", "Static Site Generation", "Netlify"],
+      type: "current",
+      color: "#007bff"
+    },
+    {
       title: "Raspberry Pi Photo Server",
       period: "May 2025",
       summary: "Developed a private photo/video server using Raspberry Pi and an external SSD with secure per-user storage. Built a FastAPI backend with JWT authentication and RESTful APIs, paired with a React Native cross-platform app for automatic uploads, offline caching, and album sync. Automated server boot and CI/CD using systemd and GitHub webhooks.",
@@ -50,20 +64,6 @@ function Projects() {
       technologies: ["React", "Tailwind CSS", "REST API", "Figma"],
       type: "web",
       color: "#6f42c1"
-    },
-    {
-      title: "Personal Portfolio Website",
-      period: "Aug 2025",
-      summary: "Designed and deployed a personal portfolio website to showcase projects, experience, and skills. Built with Next.js and Static Site Generation to ensure fast loading, SEO optimization, and accessibility. Features responsive design, smooth animations, and works without JavaScript enabled.",
-      highlights: [
-        "Static Site Generation with Next.js",
-        "Works without JavaScript enabled",
-        "SEO optimized",
-        "Smooth animations with Framer Motion"
-      ],
-      technologies: ["Next.js", "TypeScript", "Static Site Generation", "Netlify"],
-      type: "current",
-      color: "#007bff"
     }
   ];
 

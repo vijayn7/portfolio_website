@@ -43,7 +43,7 @@ function Experience() {
     {
       company: "University of Michigan Tech Shop",
       position: "Sales Consultant",
-      period: "Sep 2024 – Present",
+      period: "Sep 2024 – Dec 2024",
       summary: "Handled accurate POS transactions. Advised on computer configurations and price comparisons through phone, email, and in‑person. Guided product recommendations using personal expertise and customer insights.",
       highlights: [
         "Multi-channel customer support",
