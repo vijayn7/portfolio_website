@@ -5,6 +5,7 @@ import { faBriefcase} from '@fortawesome/free-solid-svg-icons';
 import Experience from './Experience';
 import Skills from './Skills';
 import Education from './Education';
+import Projects from './Projects';
 
 function Me() {
   return (
@@ -96,6 +97,8 @@ function Me() {
           <Skills />
           
           <Experience />
+          
+          <Projects />
           
           <div id="education">
             <Education />
