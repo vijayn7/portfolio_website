@@ -4,10 +4,7 @@ import './Me.css';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import Experience from './Experience';
-import Skills from './Skills';
-import Education from './Education';
-import Projects from './Projects';
+import { Experience, Skills, Education, Projects } from './index';
 import Image from 'next/image';
 
 function Me() {

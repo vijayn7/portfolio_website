@@ -5,7 +5,7 @@ import './Projects.css';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
-import ProjectCard from './ProjectCard';
+import { ProjectCard } from './index';
 
 function Projects() {
   const projects = [
@@ -54,14 +54,14 @@ function Projects() {
     {
       title: "Personal Portfolio Website",
       period: "Aug 2025",
-      summary: "Designed and deployed a personal portfolio website to showcase projects, experience, and skills. Built with modern web technologies to ensure responsiveness, performance, and accessibility. Integrated dynamic project listings, animations, and SEO optimization to enhance discoverability.",
+      summary: "Designed and deployed a personal portfolio website to showcase projects, experience, and skills. Built with Next.js and Static Site Generation to ensure fast loading, SEO optimization, and accessibility. Features responsive design, smooth animations, and works without JavaScript enabled.",
       highlights: [
-        "Responsive design across devices",
-        "Performance optimized",
+        "Static Site Generation with Next.js",
+        "Works without JavaScript enabled",
         "SEO optimized",
-        "Dynamic animations"
+        "Smooth animations with Framer Motion"
       ],
-      technologies: ["React", "Tailwind CSS", "JavaScript", "Netlify"],
+      technologies: ["Next.js", "TypeScript", "Static Site Generation", "Netlify"],
       type: "current",
       color: "#007bff"
     }
