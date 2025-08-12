@@ -1,5 +1,4 @@
 @import './colors.css';
-@import './Components.css';
 
 /* Education section */
 .education {
@@ -10,10 +9,15 @@
   border-left: 4px solid var(--primary-color);
 }
 
-.education h3 {
+.education .section-header {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.education .section-header h3 {
   font-size: 1.6rem;
   color: var(--secondary-color);
-  margin: 1.5rem 0 1rem 0;
+  margin: 0;
   display: flex;
   align-items: center;
   font-weight: 600;
@@ -129,6 +133,15 @@
     padding: 1.2rem;
   }
   
+  .education .section-header h3 {
+    font-size: 1.4rem;
+    padding-bottom: 0.4rem;
+  }
+  
+  .section-icon {
+    font-size: 1.2rem;
+  }
+  
   .education-header {
     flex-direction: column;
     align-items: flex-start;
@@ -147,20 +160,17 @@
     font-size: 0.85rem;
     padding: 0.3rem 0.6rem;
   }
-  
-  .education h3 {
-    font-size: 1.4rem;
-    padding-bottom: 0.4rem;
-  }
-  
-  .section-icon {
-    font-size: 1.2rem;
-  }
 }
 
 @media (max-width: 480px) {
   .education {
     padding: 1rem;
+  }
+  
+  .education .section-header h3 {
+    font-size: 1.2rem;
+    padding-bottom: 0.3rem;
+    border-bottom-width: 1px;
   }
   
   .education-header h4 {
@@ -187,11 +197,5 @@
   
   .extracurricular-item {
     font-size: 0.9rem;
-  }
-  
-  .education h3 {
-    font-size: 1.2rem;
-    padding-bottom: 0.3rem;
-    border-bottom-width: 1px;
   }
 }

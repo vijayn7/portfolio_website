@@ -97,30 +97,9 @@ function Me() {
           
           <Experience />
           
-          <Education />
-          
-          <motion.div 
-            className="cta"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            id="contact"
-          >
-            <div className="cta-content">
-              <h3>Let's Build Something Amazing Together</h3>
-              <p>I'm looking for new challenges—internships or roles where I can keep learning and ship software that matters. Ready to make an impact?</p>
-              <motion.button 
-                className="cta-button"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get In Touch
-              </motion.button>
-            </div>
-          </motion.div>
+          <div id="education">
+            <Education />
+          </div>
         </div>
       </motion.section>
     </>

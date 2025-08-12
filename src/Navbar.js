@@ -7,7 +7,7 @@ import './Navbar.css';
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const navItems = useMemo(() => ['home', 'stack', 'experience', 'contact'], []);
+  const navItems = useMemo(() => ['home', 'stack', 'experience', 'education'], []);
   const observerRef = useRef(null);
 
   // Close menu when ESC key is pressed
@@ -43,12 +43,19 @@ function Navbar() {
     // Set up observer options
     const options = {
       root: null, // use viewport
-      rootMargin: "-50% 0px", // Consider section in view when it's 50% in viewport
-      threshold: 0
+      rootMargin: "-20% 0px -50% 0px", // Top margin smaller to catch home section earlier
+      threshold: 0.1
     };
 
     // Update active section based on which one is in the viewport
     const callback = (entries) => {
+      // Handle the case when at the very top of the page
+      const scrollY = window.scrollY;
+      if (scrollY < 100) {
+        setActiveSection('home');
+        return;
+      }
+
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
@@ -68,10 +75,20 @@ function Navbar() {
       }
     });
 
+    // Add scroll listener for top of page detection
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection('home');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
       }
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [navItems]);
 
@@ -102,21 +119,10 @@ function Navbar() {
               whileTap={{ scale: 0.95 }}
               className={activeSection === item ? 'active' : ''}
             >
-              <a href={`#${item}`}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'contact' ? 'Contact' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
+              <a href={`#${item}`}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'education' ? 'Education' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
             </motion.li>
           ))}
         </ul>
-        <motion.div 
-          key="desktop-hire-me"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: navItems.length * 0.05, duration: 0.2 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="hire-me-button-container"
-        >
-          <a href="#contact" className={`hire-me-button ${activeSection === 'contact' ? 'active' : ''}`}>Hire Me</a>
-        </motion.div>
       </div>
       
       <div className="mobile-nav">
@@ -177,7 +183,7 @@ function Navbar() {
             whileTap={{ scale: 0.95 }}
             className={activeSection === item ? 'active' : ''}
           >
-            <a href={`#${item}`} onClick={closeMobileMenu}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'contact' ? 'Contact' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
+            <a href={`#${item}`} onClick={closeMobileMenu}>{item === 'home' ? 'About' : item === 'stack' ? 'Skills' : item === 'experience' ? 'Experience' : item === 'education' ? 'Education' : item.charAt(0).toUpperCase() + item.slice(1)}</a>
           </motion.li>
         ))}
       </motion.ul>
