@@ -22,7 +22,6 @@
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px var(--shadow-medium);
-  border-top: 2px solid var(--primary-color);
 }
 
 /* Placeholder sections for testing navigation */
