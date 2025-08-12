@@ -1,4 +1,3 @@
-import React from 'react';
 import './ExperienceCard.css';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

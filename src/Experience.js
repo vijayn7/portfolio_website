@@ -52,21 +52,6 @@ function Experience() {
       type: "current",
       logo: "/assets/Michigan.jpeg",
       color: "#00284eff"
-    },
-    {
-      company: "Kumon Math Instructor",
-      position: "Math Instructor",
-      period: "Jun 2024 – Aug 2024",
-      summary: "Assessed students and crafted individualized study projections. Guided independent learning by supplying hint‑based support. Graded and reviewed worksheets, provided progress updates to parents.",
-      highlights: [
-        "Individualized learning plans",
-        "Progress tracking & reporting",
-        "Student mentorship"
-      ],
-      technologies: ["Student Assessment", "Lesson Planning", "Progress Evaluation", "Parent Communication"],
-      type: "education",
-      logo: "/assets/kumon_logo.jpeg",
-      color: "#4d99baff"
     }
   ];
 
@@ -93,13 +78,6 @@ function Experience() {
       </motion.div>
       
       <div className="experience-timeline">
-        <motion.div 
-          className="timeline-line"
-          initial={{ height: 0 }}
-          whileInView={{ height: "100%" }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          viewport={{ once: true }}
-        />
         {experiences.map((experience, index) => (
           <ExperienceCard 
             key={`${experience.company}-${index}`}

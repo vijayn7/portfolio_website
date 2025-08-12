@@ -4,9 +4,8 @@
 .experience-card {
   position: relative;
   margin-bottom: 2.5rem;
-  margin-left: 1rem;
-  border-left: 3px solid var(--primary-light);
   padding-left: 1.5rem;
+  border-left: 3px solid var(--card-color);
 }
 
 .experience-card::before {
@@ -16,10 +15,10 @@
   top: 20px;
   width: 12px;
   height: 12px;
-  background-color: var(--primary-color);
+  background-color: var(--card-color);
   border-radius: 50%;
   border: 3px solid var(--white);
-  box-shadow: 0 0 0 3px var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .experience-header {
@@ -197,39 +196,6 @@
   background-color: var(--primary-light);
   color: var(--white);
   transform: translateY(-1px);
-}
-
-/* Experience type specific styling */
-.experience-card.internship {
-  border-left-color: #0066cc;
-}
-
-.experience-card.internship::before {
-  background-color: #0066cc;
-}
-
-.experience-card.leadership {
-  border-left-color: #ff6b35;
-}
-
-.experience-card.leadership::before {
-  background-color: #ff6b35;
-}
-
-.experience-card.current {
-  border-left-color: #00274c;
-}
-
-.experience-card.current::before {
-  background-color: #00274c;
-}
-
-.experience-card.education {
-  border-left-color: #2e86ab;
-}
-
-.experience-card.education::before {
-  background-color: #2e86ab;
 }
 
 /* Responsive design for experience cards */

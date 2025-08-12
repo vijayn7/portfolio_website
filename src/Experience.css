@@ -19,16 +19,6 @@
 
 .experience-timeline {
   position: relative;
-  padding-left: 2rem;
-}
-
-.timeline-line {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
-  border-radius: 2px;
 }
 
 /* Responsive design for experience timeline */
