@@ -1,9 +1,7 @@
-import React from 'react';
 import './Me.css';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faLaptopCode, faBriefcase, faGraduationCap, faCamera, faRobot, faMountain } from '@fortawesome/free-solid-svg-icons';
-import { faReact, faJava, faPython, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faBriefcase, faGraduationCap, faCamera, faRobot, faMountain } from '@fortawesome/free-solid-svg-icons';
 import Experience from './Experience';
 import Skills from './Skills';
 
