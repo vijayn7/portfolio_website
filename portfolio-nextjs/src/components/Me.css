@@ -260,7 +260,7 @@
   
   .highlight {
     font-size: 1.03rem;
-    transition: color 0.3s, font-size 0.3s;
+    transition: color var(--transition), font-size var(--transition);
   }
 
   .highlight:hover {

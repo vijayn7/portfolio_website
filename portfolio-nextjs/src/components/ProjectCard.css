@@ -7,7 +7,7 @@
   padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   border-top: 4px solid var(--card-color);
-  transition: all 0.3s ease;
+  transition: all var(--transition);
   height: fit-content;
 }
 
@@ -83,7 +83,7 @@
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   font-family: var(--font-primary);
-  transition: color 0.2s, transform 0.2s;
+  transition: color var(--transition), transform var(--transition);
 }
 
 .highlights li:hover {
@@ -130,7 +130,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   border: 1px solid var(--primary-light);
-  transition: all 0.2s ease;
+  transition: all var(--transition);
 }
 
 .tech-tag:hover {
