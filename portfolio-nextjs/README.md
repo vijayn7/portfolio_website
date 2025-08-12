@@ -1,4 +1,4 @@
-# Portfolio Website - Next.js
+# Portfolio Website - Next.js [![Netlify Status](https://api.netlify.com/api/v1/badges/75f9ccbe-6768-402b-b932-9770b4e12644/deploy-status)](https://app.netlify.com/projects/vijayn7/deploys)
 
 A modern, responsive portfolio website built with Next.js, featuring Static Site Generation (SSG) for excellent performance and SEO, plus complete accessibility for users with JavaScript disabled.
 
