@@ -3,13 +3,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
+import { faEnvelope, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
   const socialLinks = [
-    { icon: faGithub, url: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: faLinkedin, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: faTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
-    { icon: faInstagram, url: 'https://instagram.com/yourusername', label: 'Instagram' }
+    { icon: faGithub, url: 'https://github.com/vijayn7', label: 'GitHub' },
+    { icon: faLinkedin, url: 'https://linkedin.com/in/vijayn7', label: 'LinkedIn' },
+    { icon: faEnvelope, url: 'mailto:vijaynannapuraju@gmail.com', label: 'Email' },
+    { icon: faInstagram, url: 'https://instagram.com/vijay_n7_', label: 'Instagram' }
   ];
 
   return (

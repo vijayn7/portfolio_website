@@ -22,7 +22,7 @@ function App() {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <Me /> {/* Add the Me component */}
+          <Me />
         </motion.main>
       </AnimatePresence>
       <Footer />
